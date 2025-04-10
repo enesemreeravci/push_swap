@@ -6,13 +6,13 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:35:38 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/03 17:48:27 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/03 18:17:28 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-// this function does copy values into an arrays
+// this function does copy values into an array
 int	*copy_to_array(t_node *stack, int size)
 {
 	int	*arr;
