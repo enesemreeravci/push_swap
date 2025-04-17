@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:12:08 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/06 13:15:45 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/17 14:43:34 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	pb(t_node **a, t_node **b)
 
 void	pa(t_node **a, t_node **b)
 {
-	t_node temp;
+	t_node	temp;
 
 	if (!*a)
 		return ;

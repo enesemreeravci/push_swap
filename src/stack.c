@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:03:25 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/06 13:15:56 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/17 14:43:24 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ void	add_stack_bottom(t_node **stack, t_node *new)
 
 int	stack_size(t_node *stack)
 {
-	int size;
+	int	size;
+
 	size = 0;
 	while (stack)
 	{

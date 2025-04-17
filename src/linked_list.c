@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 13:03:40 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/02 13:07:53 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/17 14:44:23 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	add_back(t_node **stack, t_node *new)
 
 void	free_stack(t_node **stack)
 {
-	t_node **stack;
+	t_node	**stack;
 
 	while (*stack)
 	{

@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:35:38 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/03 18:17:28 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/17 14:44:18 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,10 @@ int	get_index(int *sorted, int value, int size)
 
 void	normalize_stack(t_node *stack, int count)
 {
-	int *sorted = copy_to_array(stack, count);
-	bubble_sort(sorted, count);
+	int	*sorted;
 
+	sorted = copy_to_array(stack, count);
+	bubble_sort(sorted, count);
 	while (stacl)
 	{
 		stack->value = get_index(sorted, stack->value,

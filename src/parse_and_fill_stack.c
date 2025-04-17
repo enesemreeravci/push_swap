@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:41:16 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/11 21:14:14 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/17 14:44:11 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ t_node	*parse_and_fill_stack(int argc, char **argv, int *count)
 	int		num;
 	int		arg_mode;
 	int		j;
-	//free	args;
 
 	stack = NULL;
 	i = 0;

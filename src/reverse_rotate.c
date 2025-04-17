@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 21:20:18 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/11 21:23:36 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/17 14:43:32 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	rra(t_node **stack)
 {
-	t_node *prev;
-	t_node *last;
+	t_node	*prev;
+	t_node	*last;
 
 	if (!*stack || !(*stack)->next)
 		return ;
 	prev = NULL;
 	last = *stack;
-
 	while (last->next)
 	{
 		prev = last;

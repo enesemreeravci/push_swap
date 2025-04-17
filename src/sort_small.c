@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:16:11 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/16 13:30:19 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/17 14:42:31 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,40 @@ int	get_index(t_node *stack, int value)
 
 void	push_min_to_b(t_node **a, t_node **b)
 {
-	int min = get_min_value(*a);
-	int index = get_index(*a, min);
-    if(index == 1)
-        ra(a);
+	int	min;
+	int	index;
+
+	min = get_min_value(*a);
+	index = get_index(*a, min);
+	if (index == 1)
+		ra(a);
+	else if (index == 2)
+	{
+		ra(a);
+		ra(a);
+	}
+	else if (index == 3)
+		rra(a);
+	else if (index == 4)
+	{
+		rra(a);
+		rra(a);
+	}
+	pb(a, b);
+}
+
+void	sort_5(t_node **a, t_node **b)
+{
+	int	size;
+
+	size = stack_size(*a);
+	while (stack_size(*a) > 3)
+	{
+		push_min_to_b(a, b);
+	}
+	sort_3(a);
+	while (*b)
+	{
+		pa(a, b);
+	}
 }
