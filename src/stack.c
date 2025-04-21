@@ -6,11 +6,11 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:03:25 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/17 14:43:24 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/21 16:48:39 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 t_node	*new_node(int value)
 {
@@ -20,7 +20,7 @@ t_node	*new_node(int value)
 	if (!node)
 		error_exit();
 	node->value = value;
-	node->index = -1;
+	// node->next = -1;
 	node->next = NULL;
 	return (node);
 }
@@ -36,7 +36,7 @@ void	add_stack_bottom(t_node **stack, t_node *new)
 	}
 	temp = *stack;
 	while (temp->next)
-		temp = temp->stack;
+		temp = temp->next;
 	temp->next = new;
 }
 

@@ -6,11 +6,11 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 11:38:07 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/17 14:43:45 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/21 16:10:47 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	main(int argc, char **argv)
 {

@@ -6,16 +6,16 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:16:11 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/17 14:42:31 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/21 17:07:52 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sort_2(t_node **stack)
 {
 	if ((*stack)->value > (*stack)->next->value)
-		sa(stack;)
+		sa(stack);
 }
 
 void	sort_3(t_node **stack)
@@ -51,21 +51,6 @@ void	sort_3(t_node **stack)
 	}
 }
 
-// find the lowest value in the stack
-int	get_min_value(t_node *stack)
-{
-	int	min;
-
-	min = stack->value;
-	while (stack)
-	{
-		if (stack->value < min)
-			min = stack->value;
-		stack = stack->value;
-	}
-	return (min);
-}
-
 // get the position of a value in the stack
 int	get_index(t_node *stack, int value)
 {
@@ -80,6 +65,20 @@ int	get_index(t_node *stack, int value)
 		stack = stack->next;
 	}
 	return (-1);
+}
+// find the lowest value in the stack
+int	get_min_value(t_node *stack)
+{
+	int	min;
+
+	min = stack->value;
+	while (stack)
+	{
+		if (stack->value < min)
+			min = stack->value;
+		stack = stack->next;
+	}
+	return (min);
 }
 
 void	push_min_to_b(t_node **a, t_node **b)
@@ -108,9 +107,6 @@ void	push_min_to_b(t_node **a, t_node **b)
 
 void	sort_5(t_node **a, t_node **b)
 {
-	int	size;
-
-	size = stack_size(*a);
 	while (stack_size(*a) > 3)
 	{
 		push_min_to_b(a, b);
@@ -120,4 +116,17 @@ void	sort_5(t_node **a, t_node **b)
 	{
 		pa(a, b);
 	}
+}
+
+void	sort_small(t_node **a, t_node **b)
+{
+	int	size;
+
+	size = stack_size(*a);
+	if (size == 2)
+		sort_2(a);
+	else if (size == 3)
+		sort_3(a);
+	else if (size == 4 || size == 5)
+		sort_5(a, b);
 }

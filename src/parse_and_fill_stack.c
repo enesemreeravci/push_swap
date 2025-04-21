@@ -6,11 +6,11 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:41:16 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/17 14:44:11 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/21 16:39:16 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 char	**split_args(int argc, char **argv, int *arg_mode)
 {
@@ -44,7 +44,7 @@ t_node	*parse_and_fill_stack(int argc, char **argv, int *count)
 		num = ft_atoi(args[i]);
 		if (is_duplicate(stack, num))
 			error_exit();
-		add_back(&stack, new_mode(num));
+		add_stack_bottom(&stack, new_node(num));
 		(*count)++;
 		i++;
 	}

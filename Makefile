@@ -6,7 +6,7 @@
 #    By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/17 15:26:36 by eeravci           #+#    #+#              #
-#    Updated: 2025/04/17 15:28:13 by eeravci          ###   ########.fr        #
+#    Updated: 2025/04/21 16:52:08 by eeravci          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,21 +19,28 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Source and header paths
 SRC_DIR = src
+LIBFT_DIR = libft
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(SRCS:.c=.o)
-INCLUDES = -I.
+LIBFT = $(LIBFT_DIR)/libft.a
+INCLUDES = -Iincludes -I$(LIBFT_DIR)
 
 # Rules
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 	rm -f $(OBJS)
+	@$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
+	@$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

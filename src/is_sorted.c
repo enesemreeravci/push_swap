@@ -6,11 +6,11 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/03 17:31:04 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/17 14:44:29 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/21 16:10:18 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../includes/push_swap.h"
 
 int	is_sorted(t_node *stack)
 {

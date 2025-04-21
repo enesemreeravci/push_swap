@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/03 17:35:38 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/17 14:44:18 by eeravci          ###   ########.fr       */
+/*   Created: 2025/04/21 17:00:56 by eeravci           #+#    #+#             */
+/*   Updated: 2025/04/21 17:05:30 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "../includes/push_swap.h"
 
 // this function does copy values into an array
 int	*copy_to_array(t_node *stack, int size)
@@ -52,7 +52,7 @@ void	bubble_sort(int *arr, int size)
 	}
 }
 
-int	get_index(int *sorted, int value, int size)
+int	get_array_index(int *sorted, int value, int size)
 {
 	int	i;
 
@@ -72,10 +72,10 @@ void	normalize_stack(t_node *stack, int count)
 
 	sorted = copy_to_array(stack, count);
 	bubble_sort(sorted, count);
-	while (stacl)
+	while (stack)
 	{
-		stack->value = get_index(sorted, stack->value,
-				count) stack = stack->next;
+		stack->value = get_array_index(sorted, stack->value, count);
+		stack = stack->next;
 	}
 	free(sorted);
 }

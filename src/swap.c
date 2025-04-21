@@ -6,18 +6,18 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:09:49 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/17 14:43:21 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/21 16:11:32 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../includes/push_swap.h"
 
 void	sa(t_node **stack)
 {
+	int	temp;
+
 	if (!*stack || !(*stack)->next)
 		return ;
-	int temp;
-
 	temp = (*stack)->value;
 	(*stack)->value = (*stack)->next->value;
 	(*stack)->next->value = temp;
