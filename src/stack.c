@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:03:25 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/21 16:48:39 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/23 15:14:48 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_node	*new_node(int value)
 	if (!node)
 		error_exit();
 	node->value = value;
-	// node->next = -1;
 	node->next = NULL;
 	return (node);
 }

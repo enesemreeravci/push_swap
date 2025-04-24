@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 11:38:07 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/21 16:10:47 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/24 12:30:56 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,17 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		return (0);
-	// validate input and build stack_a as a linked list
 	stack_a = parse_and_fill_stack(argc, argv, &count);
-	// if it's already sorted, skip everything
 	if (is_sorted(stack_a))
 	{
 		free_stack(&stack_a);
 		return (0);
 	}
-	// replace real values with their index position - helps radix sort
 	normalize_stack(stack_a, count);
-	// choose the right algorithm based on number count
 	if (count <= 5)
 		sort_small(&stack_a, &stack_b);
 	else
 		sort_big(&stack_a, &stack_b);
-	// prevent memory leaks
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

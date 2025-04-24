@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:00:56 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/21 17:05:30 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/24 12:31:26 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,10 @@ int	*copy_to_array(t_node *stack, int size)
 // a simple bubble sort
 void	bubble_sort(int *arr, int size)
 {
+	int	i;
+	int	j;
 	int	temp;
 
-	int i, j;
 	i = 0;
 	while (i < size - 1)
 	{

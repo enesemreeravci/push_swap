@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:41:16 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/21 16:39:16 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/24 12:39:19 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,34 +26,44 @@ char	**split_args(int argc, char **argv, int *arg_mode)
 	}
 }
 
+static void	free_args(char **args)
+{
+	int	i;
+
+	i = 0;
+	while (args[i])
+		free(args[i++]);
+	free(args);
+}
+
+static void	fill_stack(t_node **stack, char **args, int *count)
+{
+	int	num;
+	int	i;
+
+	i = 0;
+	while (args[i])
+	{
+		num = ft_atoi(args[i]);
+		if (is_duplicate(*stack, num))
+			error_exit();
+		add_stack_bottom(stack, new_node(num));
+		(*count)++;
+		i++;
+	}
+}
+
 t_node	*parse_and_fill_stack(int argc, char **argv, int *count)
 {
 	char	**args;
 	t_node	*stack;
-	int		i;
-	int		num;
 	int		arg_mode;
-	int		j;
 
 	stack = NULL;
-	i = 0;
 	args = split_args(argc, argv, &arg_mode);
 	*count = 0;
-	while (args[i])
-	{
-		num = ft_atoi(args[i]);
-		if (is_duplicate(stack, num))
-			error_exit();
-		add_stack_bottom(&stack, new_node(num));
-		(*count)++;
-		i++;
-	}
+	fill_stack(&stack, args, count);
 	if (arg_mode == 1)
-	{
-		j = 0;
-		while (args[j])
-			free(args[j++]);
-		free(args);
-	}
+		free_args(args);
 	return (stack);
 }

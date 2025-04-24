@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:16:11 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/21 17:07:52 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/24 12:41:08 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,21 @@ void	sort_3(t_node **stack)
 	b = (*stack)->next->value;
 	c = (*stack)->next->next->value;
 	if (a > b && b < c && a < c)
-	{
 		sa(stack);
-	}
 	else if (a > b && b > c)
 	{
 		sa(stack);
 		rra(stack);
 	}
 	else if (a > b && b < c && a > c)
-	{
 		ra(stack);
-	}
 	else if (a < b && b > c && a < c)
 	{
 		sa(stack);
 		ra(stack);
 	}
 	else if (a < b && b > c && a > c)
-	{
 		rra(stack);
-	}
 }
 
 // get the position of a value in the stack
@@ -67,6 +61,7 @@ int	get_index(t_node *stack, int value)
 	return (-1);
 }
 // find the lowest value in the stack
+
 int	get_min_value(t_node *stack)
 {
 	int	min;
