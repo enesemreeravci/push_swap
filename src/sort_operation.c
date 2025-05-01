@@ -6,34 +6,41 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 18:57:26 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/25 19:06:21 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/01 16:56:47 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	sort_5(t_node **a, t_node **b)
+void	sort_2(t_node **stack)
 {
-	while (stack_size(*a) > 3)
-	{
-		push_min_to_b(a, b);
-	}
-	sort_3(a);
-	while (*b)
-	{
-		pa(a, b);
-	}
+	if ((*stack)->value > (*stack)->next->value)
+		sa(stack);
 }
 
-void	sort_small(t_node **a, t_node **b)
+void	sort_3(t_node **stack)
 {
-	int	size;
+	int	a;
+	int	b;
+	int	c;
 
-	size = stack_size(*a);
-	if (size == 2)
-		sort_2(a);
-	else if (size == 3)
-		sort_3(a);
-	else if (size == 4 || size == 5)
-		sort_5(a, b);
+	a = (*stack)->value;
+	b = (*stack)->next->value;
+	c = (*stack)->next->next->value;
+	if (a > b && b < c && a < c)
+		sa(stack);
+	else if (a > b && b > c)
+	{
+		sa(stack);
+		rra(stack);
+	}
+	else if (a > b && b < c && a > c)
+		ra(stack);
+	else if (a < b && b > c && a < c)
+	{
+		sa(stack);
+		ra(stack);
+	}
+	else if (a < b && b > c && a > c)
+		rra(stack);
 }

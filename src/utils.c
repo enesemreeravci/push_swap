@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 11:24:23 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/24 12:41:51 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/01 16:12:37 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,26 @@ int	is_duplicate(t_node *stack, int value)
 		stack = stack->next;
 	}
 	return (0);
+}
+
+int	ft_isnumbervalid(const char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str || str[0] == '\0')
+		return (0);
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (str[i] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 void	free_stack(t_node **stack)

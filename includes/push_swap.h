@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:43:02 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/24 12:30:14 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/01 15:41:23 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_node
 /*-------------utils---------------*/
 
 void				error_exit(void);
-
+int					ft_isnumbervalid(const char *str);
 /* ──────────── STACK FUNCTIONS ───────────── */
 
 t_node				*new_node(int value);

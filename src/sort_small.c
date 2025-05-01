@@ -6,44 +6,11 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:16:11 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/25 18:58:44 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/04/25 19:35:14 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	sort_2(t_node **stack)
-{
-	if ((*stack)->value > (*stack)->next->value)
-		sa(stack);
-}
-
-void	sort_3(t_node **stack)
-{
-	int	a;
-	int	b;
-	int	c;
-
-	a = (*stack)->value;
-	b = (*stack)->next->value;
-	c = (*stack)->next->next->value;
-	if (a > b && b < c && a < c)
-		sa(stack);
-	else if (a > b && b > c)
-	{
-		sa(stack);
-		rra(stack);
-	}
-	else if (a > b && b < c && a > c)
-		ra(stack);
-	else if (a < b && b > c && a < c)
-	{
-		sa(stack);
-		ra(stack);
-	}
-	else if (a < b && b > c && a > c)
-		rra(stack);
-}
 
 // get the position of a value in the stack
 int	get_index(t_node *stack, int value)
@@ -98,4 +65,30 @@ void	push_min_to_b(t_node **a, t_node **b)
 		rra(a);
 	}
 	pb(a, b);
+}
+
+void	sort_5(t_node **a, t_node **b)
+{
+	while (stack_size(*a) > 3)
+	{
+		push_min_to_b(a, b);
+	}
+	sort_3(a);
+	while (*b)
+	{
+		pa(a, b);
+	}
+}
+
+void	sort_small(t_node **a, t_node **b)
+{
+	int	size;
+
+	size = stack_size(*a);
+	if (size == 2)
+		sort_2(a);
+	else if (size == 3)
+		sort_3(a);
+	else if (size == 4 || size == 5)
+		sort_5(a, b);
 }
