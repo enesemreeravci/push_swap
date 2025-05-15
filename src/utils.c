@@ -6,18 +6,20 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 11:24:23 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/01 16:12:37 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/15 11:05:43 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+// prints error to standard error and exits he program
 void	error_exit(void)
 {
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
+// returns 1 if the value already exists in the stack, otherwise 0
 int	is_duplicate(t_node *stack, int value)
 {
 	while (stack)
@@ -29,6 +31,7 @@ int	is_duplicate(t_node *stack, int value)
 	return (0);
 }
 
+// validates if the given string is a correctly formatted integer
 int	ft_isnumbervalid(const char *str)
 {
 	int	i;
@@ -49,6 +52,7 @@ int	ft_isnumbervalid(const char *str)
 	return (1);
 }
 
+// frees all nodes in the stack and clears the pointer
 void	free_stack(t_node **stack)
 {
 	t_node	*temp;

@@ -6,12 +6,16 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:12:08 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/21 16:39:48 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/15 10:44:10 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*
+pushes the top element from stack A to B
+and prints "pb"
+*/
 void	pb(t_node **a, t_node **b)
 {
 	t_node	*temp;
@@ -25,6 +29,10 @@ void	pb(t_node **a, t_node **b)
 	write(1, "pb\n", 3);
 }
 
+/*
+pushes the top element from stack B to stack A
+ and prints "pa"
+*/
 void	pa(t_node **a, t_node **b)
 {
 	t_node	*temp;

@@ -6,13 +6,13 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:00:56 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/24 12:31:26 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/15 10:36:37 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// this function does copy values into an array
+// this function does copy values into an intger array
 int	*copy_to_array(t_node *stack, int size)
 {
 	int	*arr;
@@ -53,6 +53,7 @@ void	bubble_sort(int *arr, int size)
 	}
 }
 
+// finds the index if a value in a sorted array
 int	get_array_index(int *sorted, int value, int size)
 {
 	int	i;
@@ -67,6 +68,7 @@ int	get_array_index(int *sorted, int value, int size)
 	return (-1);
 }
 
+// replace each node's value in the stack with its index from the sorted array
 void	normalize_stack(t_node *stack, int count)
 {
 	int	*sorted;

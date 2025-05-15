@@ -6,12 +6,13 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:03:25 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/23 15:14:48 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/15 11:00:59 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+// creates a new stack node with the given integer value
 t_node	*new_node(int value)
 {
 	t_node	*node;
@@ -24,6 +25,7 @@ t_node	*new_node(int value)
 	return (node);
 }
 
+// adds a new node to the bottom of the stack
 void	add_stack_bottom(t_node **stack, t_node *new)
 {
 	t_node	*temp;
@@ -39,6 +41,7 @@ void	add_stack_bottom(t_node **stack, t_node *new)
 	temp->next = new;
 }
 
+// returns the number of elements in the stack
 int	stack_size(t_node *stack)
 {
 	int	size;

@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:43:02 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/01 15:41:23 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/15 12:00:49 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/* ─────────────── STRUCT ─────────────── */
+/* STRUCT */
 
 typedef struct s_node
 {
@@ -26,18 +26,18 @@ typedef struct s_node
 	struct s_node	*next;
 }					t_node;
 
-/*-------------utils---------------*/
+/*utils*/
 
 void				error_exit(void);
 int					ft_isnumbervalid(const char *str);
-/* ──────────── STACK FUNCTIONS ───────────── */
+/* STACK FUNCTIONS */
 
 t_node				*new_node(int value);
 void				add_stack_bottom(t_node **stack, t_node *new);
 int					stack_size(t_node *stack);
 void				free_stack(t_node **stack);
 
-/* ──────────── PARSING & INIT ───────────── */
+/* PARSING & INIT */
 
 t_node				*parse_and_fill_stack(int argc, char **argv, int *count);
 int					is_duplicate(t_node *stack, int value);
@@ -47,7 +47,7 @@ void				free_stack(t_node **stack);
 void				normalize_stack(t_node *stack, int count);
 int					get_index(t_node *stack, int value);
 
-/* ─────────────── SORTING ─────────────── */
+/* SORTING */
 
 void				sort_2(t_node **a);
 void				sort_3(t_node **a);
@@ -58,7 +58,7 @@ void				normalize_stack(t_node *stack, int count);
 void				sort_small(t_node **a, t_node **b);
 int					get_array_index(int *sorted, int value, int size);
 
-/* ─────────────── OPERATIONS ─────────────── */
+/* OPERATIONS */
 
 // swap.c
 void				sa(t_node **a);

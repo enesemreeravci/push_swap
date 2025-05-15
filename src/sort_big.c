@@ -6,12 +6,16 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:19:12 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/21 16:11:18 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/15 10:46:48 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+/*
+gets the number of bits needed to represent
+the maximum value in the stack
+*/
 int	get_max_bits(t_node *stack)
 {
 	int	max;
@@ -30,6 +34,7 @@ int	get_max_bits(t_node *stack)
 	return (max);
 }
 
+// sorts large stack using binary radix sort based on normalized values
 void	sort_big(t_node **a, t_node **b)
 {
 	int	i;

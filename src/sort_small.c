@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:16:11 by eeravci           #+#    #+#             */
-/*   Updated: 2025/04/25 19:35:14 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/15 10:49:47 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	get_index(t_node *stack, int value)
 	}
 	return (-1);
 }
-// find the lowest value in the stack
 
+// find the lowest value in the stack
 int	get_min_value(t_node *stack)
 {
 	int	min;

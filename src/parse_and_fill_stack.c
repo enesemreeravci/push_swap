@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:41:16 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/01 16:11:33 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/01 18:43:27 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,17 @@ static void	fill_stack(t_node **stack, char **args, int *count)
 	i = 0;
 	while (args[i])
 	{
-		if (!ft_isnumbervalid(args[i]))
-			error_exit();
 		num = ft_atoi(args[i]);
+		if (!ft_isnumbervalid(args[i]))
+		{
+			free_stack(stack);
+			error_exit();
+		}
 		if (is_duplicate(*stack, num))
 			error_exit();
 		add_stack_bottom(stack, new_node(num));
 		(*count)++;
+		printf("current value in index %d is :%s \n", i, args[i]);
 		i++;
 	}
 }
