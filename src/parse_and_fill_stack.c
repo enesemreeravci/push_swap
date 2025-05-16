@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_and_fill_stack.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
+/*   By: eeravci <eeravci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:41:16 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/01 18:43:27 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/17 01:03:59 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	fill_stack(t_node **stack, char **args, int *count)
 			error_exit();
 		add_stack_bottom(stack, new_node(num));
 		(*count)++;
-		printf("current value in index %d is :%s \n", i, args[i]);
+		//printf("current value in index %d is :%s \n", i, args[i]);
 		i++;
 	}
 }
