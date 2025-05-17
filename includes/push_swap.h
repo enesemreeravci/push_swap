@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
+/*   By: eeravci <eeravci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 14:43:02 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/15 12:00:49 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/17 23:29:30 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 /* STRUCT */
 
@@ -30,6 +31,7 @@ typedef struct s_node
 
 void				error_exit(void);
 int					ft_isnumbervalid(const char *str);
+int ft_number_range(char *str);
 /* STACK FUNCTIONS */
 
 t_node				*new_node(int value);

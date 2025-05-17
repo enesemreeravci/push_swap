@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
+/*   By: eeravci <eeravci@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/06 13:12:08 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/15 10:44:10 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/17 23:17:32 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	pb(t_node **a, t_node **b)
 
 /*
 pushes the top element from stack B to stack A
- and prints "pa"
+and prints "pa"
 */
 void	pa(t_node **a, t_node **b)
 {
