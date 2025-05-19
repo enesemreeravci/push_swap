@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_and_fill_stack.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eeravci <eeravci@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 12:41:16 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/17 23:36:16 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/18 22:17:57 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ static void	fill_stack(t_node **stack, char **args, int *count)
 	while (args[i])
 	{
 		num = ft_atoi(args[i]);
-		if (!ft_isnumbervalid(args[i]) || ft_number_range(args[i]))
+		if ((!ft_isnumbervalid(args[i])) || (is_numberincorrectrange(args[i]))
+			|| (is_duplicate(*stack, num)))
 		{
 			free_stack(stack);
 			error_exit();
 		}
-		if (is_duplicate(*stack, num))
-			error_exit();
 		add_stack_bottom(stack, new_node(num));
 		(*count)++;
 		i++;

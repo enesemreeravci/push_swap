@@ -6,7 +6,7 @@
 /*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:16:11 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/15 10:49:47 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/19 16:43:19 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,27 +42,31 @@ int	get_min_value(t_node *stack)
 	}
 	return (min);
 }
+/*
+if the min is in the top half of the stack
+use ra to bring it to the top
+if the min is in the bottom half
+use rra to bring it up from the bottom
+*/
 
 void	push_min_to_b(t_node **a, t_node **b)
 {
 	int	min;
 	int	index;
+	int	size;
 
+	size = stack_size(*a);
 	min = get_min_value(*a);
 	index = get_index(*a, min);
-	if (index == 1)
-		ra(a);
-	else if (index == 2)
+	if (index <= size / 2)
 	{
-		ra(a);
-		ra(a);
+		while (index-- > 0)
+			ra(a);
 	}
-	else if (index == 3)
-		rra(a);
-	else if (index == 4)
+	else
 	{
-		rra(a);
-		rra(a);
+		while (index++ < size)
+			rra(a);
 	}
 	pb(a, b);
 }

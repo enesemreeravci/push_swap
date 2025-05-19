@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eeravci <eeravci@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 13:24:17 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/17 23:22:56 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/17 15:15:55 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c);
+int		ft_isspace(int c);
 
 long	ft_atoi(const char *str)
 {
 	long	result;
-	int	sign;
-	int	i;
+	int		sign;
+	int		i;
 
 	result = 0;
 	sign = 1;

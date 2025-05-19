@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eeravci <eeravci@student.42.fr>            +#+  +:+       +#+        */
+/*   By: eeravci <enes.nev@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/02 11:24:23 by eeravci           #+#    #+#             */
-/*   Updated: 2025/05/17 23:33:11 by eeravci          ###   ########.fr       */
+/*   Updated: 2025/05/17 15:31:58 by eeravci          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,14 @@ int	ft_isnumbervalid(const char *str)
 	return (1);
 }
 
-int ft_number_range(char *str)
+int	is_numberincorrectrange(const char *str)
 {
-	long num = ft_atoi(str);
-	
-	if(num > INT_MAX || num < INT_MIN)
-		return 1;
-	return 0;
+	long	num;
+
+	num = ft_atoi(str);
+	if (num > INT_MAX || num < INT_MIN)
+		return (1);
+	return (0);
 }
 
 // frees all nodes in the stack and clears the pointer
